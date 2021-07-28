@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экранная клавиатура!</title>
+</head>
+
+<body>
+    <style>
+        input {
+            width: 500px;
+            line-height: 30px;
+        }
+
+
+        .keyboard {
+            border: 1px solid slategrey;
+            padding: 5px;
+            border-radius: 4px;
+            position: relative;
+            width: 820px;
+        }
+
+        .line::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .key {
+            float: left;
+            width: 40px;
+            height: 40px;
+            border: 1px solid slategrey;
+            border-radius: 4px;
+            margin: 3px;
+            padding: 4px;
+            text-align: center;
+            line-height: 32px;
+            text-transform: uppercase;
+        }
+
+        .key:hover {
+            color: #fff;
+            /* background: slategrey; */
+            cursor: pointer;
+        }
+
+        .backspace {
+            width: 76px;
+        }
+
+        .tab,
+        .capslock {
+            width: 60px;
+        }
+
+        .lshift {
+            width: 72px;
+        }
+
+        .rshift {
+            width: 90px;
+        }
+
+        .lctrl,
+        .rctrl {
+            width: 69px;
+        }
+
+        .space {
+            width: 248px;
+        }
+
+        .window {
+            width: 20px;
+            padding-top: 5px;
+        }
+
+        .letter-key {
+            font-size: 10px;
+            line-height: 100%;
+        }
+
+        .enter {
+            position: absolute;
+            right: 5px;
+            top: 62px;
+            width: 59px;
+            height: 93px;
+        }
+    </style>
+
+
+
+    <section>
+        <div>
+            <input type="text" class="i-11">
+            <div class="out-11">
+            </div>
+    </section>
+
+
+
+
+    <div class="container">
+        <div class="left">
+            <h1 class="text-center">Клавиатура</h1>
+
+            <div class="keyboard">
+                <div class="line">
+                    <div class="key" data="192" onclick="insert('~')">~</div>
+                    <div class="key" data="49" onclick="insert('1')">1</div>
+                    <div class="key" data="50" onclick="insert('2')">2</div>
+                    <div class="key" data="51" onclick="insert('3')">3</div>
+                    <div class="key" data="52" onclick="insert('4')">4</div>
+                    <div class="key" data="53" onclick="insert('5')">5</div>
+                    <div class="key" data="54" onclick="insert('6')">6</div>
+                    <div class="key" data="55" onclick="insert('7')">7</div>
+                    <div class="key" data="56" onclick="insert('8')">8</div>
+                    <div class="key" data="57" onclick="insert('9')">9</div>
+                    <div class="key" data="48" onclick="insert('0')">0</div>
+                    <div class="key" data="189" onclick="insert('-')">-</div>
+                    <div class="key" data="187" onclick="insert('=')">=</div>
+                    <div class="key backspace letter-key" data="8" onclick="backspace();">Backspace</div>
+                </div>
+                <div class="line">
+                    <div class="key tab letter-key" data="9">Tab</div>
+                    <div class="key" data="81" onclick="insert('q')">q</div>
+                    <div class="key" data="87" onclick="insert('w')">w</div>
+                    <div class="key" data="69" onclick="insert('e')">e</div>
+                    <div class="key" data="82" onclick="insert('r')">r</div>
+                    <div class="key" data="84" onclick="insert('t')">t</div>
+                    <div class="key" data="89" onclick="insert('y')">y</div>
+                    <div class="key" data="85" onclick="insert('u')">u</div>
+                    <div class="key" data="73" onclick="insert('i')">i</div>
+                    <div class="key" data="79" onclick="insert('o')">o</div>
+                    <div class="key" data="80" onclick="insert('p')">p</div>
+                    <div class="key" data="219" onclick="insert('[')">[</div>
+                    <div class="key" data="221" onclick="insert(']')">]</div>
+                </div>
+                <div class="line">
+                    <div id="capslock" class="key capslock letter-key" data="20">Caps Lock
+                    </div>
+                    <div class="key" data="65" onclick="insert('a')">a</div>
+                    <div class="key" data="83" onclick="insert('s')">s</div>
+                    <div class="key" data="68" onclick="insert('d')">d</div>
+                    <div class="key" data="70" onclick="insert('f')">f</div>
+                    <div class="key" data="71" onclick="insert('g')">g</div>
+                    <div class="key" data="72" onclick="insert('h')">h</div>
+                    <div class="key" data="74" onclick="insert('j')">j</div>
+                    <div class="key" data="75" onclick="insert('k')">k</div>
+                    <div class="key" data="76" onclick="insert('l')">l</div>
+                    <div class="key" data="186" onclick="insert(';')">;</div>
+                    <div class="key" data="188" onclick="insert('&#34;')">'</div>
+                    <div class="key" data="220" onclick="insert('\')">\</div>
+                </div>
+                <div class="line">
+                    <div class="key lshift letter-key" data="16">Shift</div>
+                    <div class="key" data="" onclick="insert('|')">|</div>
+                    <div class="key" data="90" onclick="insert('z')">z</div>
+                    <div class="key" data="88" onclick="insert('x')">x</div>
+                    <div class="key" data="67" onclick="insert('c')">c</div>
+                    <div class="key" data="86" onclick="insert('v')">v</div>
+                    <div class="key" data="66" onclick="insert('b')">b</div>
+                    <div class="key" data="78" onclick="insert('n')">n</div>
+                    <div class="key" data="77" onclick="insert('m')">m</div>
+                    <div class="key" data="188" onclick="insert(',')">,</div>
+                    <div class="key" data="190" onclick="insert('.')">.</div>
+                    <div class="key" data="191" onclick="insert('/')">/</div>
+                    <div class="key rshift letter-key" data="16">Shift</div>
+                </div>
+                <div class="line">
+                    <div class="key lctrl letter-key" data="17">Ctrl</div>
+                    <div class="key letter-key" data="">Fn</div>
+                    <div class="key" data=""><img src="https://img.icons8.com/material/24/000000/windows8.png"
+                            class="window">
+                    </div>
+                    <div class="key letter-key" data="18">Alt</div>
+                    <div class="key space" data="32" onclick="space();">Space</div>
+                    <div class="key letter-key" data="18">Alt</div>
+                    <div class="key letter-key" data="">Fn</div>
+                    <div class="key" data=""><img src="https://img.icons8.com/material/24/000000/content.png"
+                            class="window">
+                    </div>
+                    <div class="key rctrl letter-key" data="17">Ctrl</div>
+                </div>
+                <div class="key enter letter-key" data="13">Enter</div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+        'use strict';
+
+        let input = document.querySelector('.i-11');
+        let key = document.querySelectorAll('.key');
+        input.value = null;
+
+        function insert(letter) {
+            if (flag) {
+                input.value += letter.toLowerCase();
+            } else {
+                input.value += letter.toUpperCase();
+            }
+        }
+
+        let capsLock = document.querySelector('#capslock');
+        console.log(capsLock)
+        let flag = true;
+        capsLock.addEventListener('mousedown', function (event) {
+            if (flag) {
+                capsLock.style.background = 'slategrey';
+            } else {
+                capsLock.style.background = '';
+            }
+            flag = !flag;
+        })
+
+        function space() {
+            input.value += ' ';
+        }
+
+        function backspace() {
+            console.log(input.value.length)
+            input.value = input.value.slice(0, -1);
+        }
+
+    </script>
+</body>
+
+</html>
